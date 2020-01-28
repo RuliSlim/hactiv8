@@ -1,32 +1,28 @@
 // 1. Menyusun Barisan Bintang
-
-// let rows1 = 5
-// for (let i = 1; i <= rows1; i++) {
-//   console.log(`*`)
-// }
+console.log('No 1')
+let rows1 = 5
+for (let i = 1; i <= rows1; i++) {
+  console.log(`*`)
+}
 
 // 2. Menyusun Barisan Bintang Dengan Nested Looping
-// Problem
-// Pada tugas ini kamu diminta untuk melakukan looping dalam JavaScript untuk menampilkan di console barisan asterisks (bintang). Setiap baris memiliki jumlah simbol '*' sesuai dengan jumlah baris. Manfaatkan nested loop atau loop di dalam loop untuk menyelesaikan kasus ini.
-
-// Skeleton Code
-// var rows2; // input the number of rows
-
-// // do loops to display asterisks in the console.
-// Output
-// jika rows2 = 5
-
-// *****
-// *****
-// *****
-// *****
-// *****
-
+console.log('No 2')
 let rows2 = 5
+for (let i = 1; i <= rows2; i++) {
+  let bintang = '*'
+  for (var j = 1; j < rows2; j++) {
+    bintang = '*' + bintang
+  }
+  console.log(`${bintang}`)
+}
+
+// 3. Menyusun Barisan Tangga Bintang Dengan Nested Looping
+console.log('No 3')
+let rows3 = 5
 for (let i = 1; i <= 1; i++) {
-  var baris; 
-  for (let j = 1; j<= rows2; j++) {
-    baris = console.log(`*`)
-  } 
-  console.log(`tes ${baris}`)
+  let bintang = '*'
+  for (let j = 1; j<= rows3; j++) {
+    console.log(`${bintang}`)
+    bintang = '*' + bintang
+  }
 }
