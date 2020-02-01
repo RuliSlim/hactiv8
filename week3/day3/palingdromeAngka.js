@@ -1,14 +1,14 @@
 const angkaPalindrome = num => {
   let copy = num, copyStr = '', reverse = ''
- do {
+  do {
    copy += 1
    copyStr = copy.toString()
    reverse = ''
     for(let j = copyStr.length-1; j >= 0; j--) {
       reverse += copyStr[j]
     }
- } while(copyStr != reverse)
- return copy
+  } while(copyStr != reverse)
+  return copy
 }
 
 // TEST CASES
