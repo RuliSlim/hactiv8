@@ -8,8 +8,15 @@
 
 const pasanganTerbesar = num => {
   let besar = num.toString().split('')
-  let nominal = new(String)
-  return besar
+  let odd = [], 
+  even = []
+  if (besar.length % 2 == 0){
+    for (let i = 0; i < besar.length; i++){
+      odd[i % 2 !== 0] = besar[1]
+      odd[i % 2 === 0] = besar[2]
+      return odd
+    }
+  }
 }
 
 // TEST CASES

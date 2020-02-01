@@ -1,13 +1,14 @@
-// Problem
-// Diberikan sebuah function angkaPalindrome(angka) yang menerima satu parameter angka. Function akan me-return angka selanjutnya yang mengandung nilai angka palindrome. Contoh, jika angka adalah 27, maka function akan me-return nilai 33 karena angka 33 adalah angka palindrom. Jika angka dari awal sudah merupakan palindrome, maka function harus mencari angka selanjutnya yang palindrome. Contoh, jika angka adalah 8, walaupun dia sudah palindrome, harus mencari angka selanjutnya yang palindrome, yaitu 9.
-
-Code
-function angkaPalindrome(num) {
-  // you can only write your code here!
-}
-
 const angkaPalindrome = num => {
-  
+  let copy = num, copyStr = '', reverse = ''
+ do {
+   copy += 1
+   copyStr = copy.toString()
+   reverse = ''
+    for(let j = copyStr.length-1; j >= 0; j--) {
+      reverse += copyStr[j]
+    }
+ } while(copyStr != reverse)
+ return copy
 }
 
 // TEST CASES

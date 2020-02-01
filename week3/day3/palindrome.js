@@ -5,7 +5,7 @@ const palindrome = kata => {
   }
   return kata2 === kata ? true : false
 }
-t
+
 
 // TEST CASES
 console.log(palindrome('katak')); // true

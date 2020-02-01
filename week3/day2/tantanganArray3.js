@@ -1,6 +1,5 @@
 // ## METHOD 1
 const input = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"]  
-const dataHandling2 = (arr, index, replace, data, ...rest) => arr.splice(index, replace, data, ...rest)
 
 dataHandling2(input, 1, 4, "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro")
 console.log(input)
@@ -11,7 +10,7 @@ console.log(input)
 // console.log(input)
 
 const dataHandling3 = (arr, index) => {
-  let month = new(String), all,
+  let month = new(String),
   date = arr[index].split('/')
   switch (date[1]) {
     case '01':
@@ -51,14 +50,12 @@ const dataHandling3 = (arr, index) => {
         month = 'Desember'
       break;
   }
-  all = month + '\n' + date.join('-') + '\n' + date.sort((a,b) => b-a) + '\n' + arr[1].slice(0, 15)
-  // return month
-  // return date.sort((a,b) => b-a)
-  // return date.join('-')
-  // return arr[1].slice(0,15)
-  return all
+  console.log(month)
+  console.log(date.sort((a,b) => b-a))
+  console.log(date.join('-'))
+  console.log(arr[1].slice(0,15))
 }
-console.log(dataHandling3(input, 3))
+dataHandling3(input, 3)
 // /**
 //  * keluaran yang diharapkan (pada console)
 //  *
