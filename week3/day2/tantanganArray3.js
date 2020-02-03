@@ -1,5 +1,6 @@
 // ## METHOD 1
 const input = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"]  
+const dataHandling2 = (arr, index, replace, data, ...rest) => arr.splice(index, replace, data, ...rest)
 
 dataHandling2(input, 1, 4, "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro")
 console.log(input)
