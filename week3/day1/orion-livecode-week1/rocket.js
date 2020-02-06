@@ -17,9 +17,17 @@
  * - HARUS MENULIS PSEUDOCODE / ALGORITMA, TIDAK MENULIS = 0!
  */
 
+//  STORE
 
 function oddFinder(string) {
    //tulis kode disini
+   let odd =''
+   for (i = 0; i < string.length; i++) {
+      if (Number(string[i] % 2 != 0)) {
+         odd += string[i]
+      } 
+   }
+   return odd
 }
 
 

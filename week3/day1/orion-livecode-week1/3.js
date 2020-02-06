@@ -55,18 +55,30 @@
 var line = 'abcde&12345' //kalian bisa mengubah isi dari 'line' untuk menguji contoh-contoh string yang lainnya
 var param = '' //kalian bisa mengisi param ini dengan 'sigma', 'letters', 'length', dll
 
-//tulis kode kalian disini
+// tulis kode kalian disini
 const countStuf = (line, param) => {
-  let total = 0
-  for(i = 0; i < line.length; i++) {
+  let total = 0, letters = 'abcdefghijklmnopqrstuvwxyz', num = '1234567890', nLetters = 0, nNum = 0, sigma = 0
+  for (i = 0; i < line.length; i++) {
+    for (j = 0; j < letters.length; j ++) {
+      if (line[i] == letters[j]) {
+        nLetters++
+      }
+    }
+    for (j = 0; j < num.length; j++) {
+      if (line[i] == num[j]) {
+        nNum++
+        sigma += Number(line[i])
+      }
+    }
     if (param == 'length') {
-      total = i
+      total = nNum + nLetters
     }
     else if (param == 'letters') {
-      total += 'x'
+      total = nLetters
     }
+    else total = sigma
   }
-  return total + 1
+  return total
 }
 
-console.log(countStuf('abcde12345', 'length'))
+console.log(countStuf('abcde12345', 'sigma'))
