@@ -47,7 +47,7 @@ var jenis_rumah = 'large' //bisa diisi dengan 3 jenis rumah normal atau large at
 
 const harga = (name, nomor_ktp, alamat, jenis_rumah) => {
   let jakarta = 100000, surabaya = 50000, yogyakarta = 45000, bandung = 90000
-  if (!name) {
+  if (!name || name == ' ') {
     return 'NAMA HARUS DIISI'
   } else if (nomor_ktp.length < 4) {
     return 'NOMOR KTP TIDAK VALID'
