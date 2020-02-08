@@ -6,21 +6,14 @@
 // }
 
 const cariModus = arr => {
-  let modus
-  for (i = 0; i < arr.length; i++) {
-    for (j = 0; j < arr.length; j++) {
-      if (arr[j] > arr[j+1]) {
-        let temp = arr[j]
-        arr[j] = arr[j+1]
-        arr[j+1] = temp
+  let modus = -1, changeValue = 0
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = arr.length-1; j >= 0; j--) {
+      if (j != i && arr[i] == arr[j]) {
+        modus = arr[i]
+        changeValue++
+        changeValue > arr.length ? modus = -1 : null
       }
-    }
-  }
-  for (i = 0; i < arr.length-1; i++) {
-    if (arr[i] == arr[i+1]) {
-      return modus = arr[i]
-    } else {
-      return modus = -1
     }
   }
   return modus
@@ -28,7 +21,7 @@ const cariModus = arr => {
 
 // TEST CASES
 console.log(cariModus([10, 4, 5, 2, 4])); // 4
-// console.log(cariModus([5, 10, 10, 6, 5])); // 5
-// console.log(cariModus([10, 3, 1, 2, 5])); // -1
-// console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
-// console.log(cariModus([7, 7, 7, 7, 7])); // -1
+console.log(cariModus([5, 10, 10, 6, 5])); // 5
+console.log(cariModus([10, 3, 1, 2, 5])); // -1
+console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
+console.log(cariModus([7, 7, 7, 7, 7])); // -1

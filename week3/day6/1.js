@@ -88,9 +88,9 @@ const mineTycoon = (mine, steps) => {
 				j = 0
 			}
 			while(j < steps && j < mine[i].length) {
-				mine[i][j] == 'c' ? nCopper += 1 : null
-				mine[i][j] == 's' ? nSilver += 1 : null
-				mine[i][j] == 'g' ? nGold += 1 : null
+				mine[i][j] == 'c' ? nCopper += 1 	: null
+				mine[i][j] == 's' ? nSilver += 1 	: null
+				mine[i][j] == 'g' ? nGold += 1 		: null
 				mine[i][j] == 'd' ? nDiamond += 1 : null
 				j++
 			}
