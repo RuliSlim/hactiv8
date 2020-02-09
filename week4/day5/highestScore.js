@@ -11,18 +11,20 @@ const highestScore = students => {
   }
   // console.log(result)
   for (let j = 0; j < students.length; j++) {
-    if (students[j].class == result['foxes'] ) {
-      result.foxes = students[j]
+    if (students[j].class == result[students[j].class] ) {
+      result[students[j].class] = students[j]
+      delete students[j].class
       // console.log(students[j])
     }
-    if (students[j].class == result['wolves'] ) {
-      result.wolves = students[j]
-      // console.log(students[j])
-    }
-    if (students[j].class == result['tigers'] ) {
-      result.tigers = students[j]
-      // console.log(students[j])
-    }
+    // BELOW THIS IS HARDCODE
+    // if (students[j].class == result['wolves'] ) {
+    //   result.wolves = students[j]
+    //   // console.log(students[j])
+    // }
+    // if (students[j].class == result['tigers'] ) {
+    //   result.tigers = students[j]
+    //   // console.log(students[j])
+    // }
   }
   // console.log(result)
   return result

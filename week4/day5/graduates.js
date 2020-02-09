@@ -7,18 +7,20 @@ const graduates= students => {
   }
   // console.log(result)
   for (let j = 0; j < students.length; j++) {
-    if (students[j].class == 'foxes' && students[j].score > 75) {
-      result.foxes.push(students[j])
+    if (students[j].score > 75) {
+      result[students[j].class].push(students[j])
+      delete students[j].class
       // console.log(students[j])
     }
-    if (students[j].class == 'wolves' && students[j].score > 75) {
-      result.wolves.push(students[j])
-      // console.log(students[j])
-    }
-    if (students[j].class == 'tigers' && students[j].score > 75) {
-      result.tigers.push(students[j])
-      // console.log(students[j])
-    }
+    // BELOW THIS IS HARDCODE
+    // if (students[j].class == 'wolves' && students[j].score > 75) {
+    //   result.wolves.push(students[j])
+    //   // console.log(students[j])
+    // }
+    // if (students[j].class == 'tigers' && students[j].score > 75) {
+    //   result.tigers.push(students[j])
+    //   // console.log(students[j])
+    // }
   }
   // console.log(result)
   return result
