@@ -10,33 +10,47 @@
 // //   // you can only write your code here!
 // // }
 
+// function person(firstName, lastName, gender, age){
+//   this.firstName = firstName
+//   this.lastName = lastName
+//   this.gender = gender
+//   age 
+//     ? this.age = 2019 - age
+//     : this.age = 'Invalid Birth Year'
+// }
+class person {
+  constructor (firstName, lastName, gender, age) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.gender = gender
+    age 
+      ? this.age = 2019 - age
+      : this.age = 'Invalid Birth Year'
+  }
+}
+
 const changeMe = arr => {
-  // let result = {
-  //   firstName : '',
-  //   lastName : '',
-  //   gender : '',
-  //   age : 0
-  // }
-  let result = ''
+  let obj = Array(arr.length), result = ''
   for (let i = 0; i < arr.length; i++) {
+    let firstName, lastName, gender, age
     for (let j = 0; j < arr[i].length; j++) {
-      result += new Object()
       switch (j) {
         case 0:
-          result.firstName = arr[i][j]
+          firstName = arr[i][j]
           break
         case 1:
-          result.lastName = arr[i][j]
+          lastName = arr[i][j]
           break
         case 2:
-          result.gender = arr[i][j]
+          gender = arr[i][j]
           break
         case 3:
-          result.age = 2019 - arr[i][j]
+          age = arr[i][j]
           break
       }
-      // result[j] = arr[i][j]
     }
+    obj[i] = new person(firstName, lastName, gender, age)
+    result += i + 1 + '. ' + firstName + ' ' + lastName + '\n' + JSON.stringify(obj[i]) + '\n'
   }
   return result
 }
@@ -53,19 +67,3 @@ console.log(changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'M
 //   gender: 'Male',
 //   age: 'Invalid Birth Year' }
 console.log(changeMe([])); // ""
-
-// four variables are created and assigned in a single go, 
-// separated by commas
-// var myObj = new Object(),
-//     str = 'myString',
-//     rand = Math.random(),
-//     obj = new Object();
-
-// myObj.type              = 'Dot syntax';
-// myObj['date created']   = 'String with space';
-// myObj[str]              = 'String value';
-// myObj[rand]             = 'Random Number';
-// myObj[obj]              = 'Object';
-// myObj['']               = 'Even an empty string';
-
-// console.log(myObj);
