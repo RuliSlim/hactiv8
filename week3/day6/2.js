@@ -23,15 +23,19 @@ Diberikan sebuah function bernama slice dimana function tersebut menerima tiga p
  */
 
  
-const slice = (data, start = 0, end = 0) => {
+function slice(data, start, end){
+
   let result = []
-  for (i = 0; i < data.length; i++) {
-    end != 0 ?
-      i >= start && i < end ? result.push(data[i]) : null
-    :
-      i >= start ? result.push(data[i]) : null
+  if (end) {
+    for (i = start; i < end; i++) {
+      result.push(data[i])
+    }
+  } else {
+    for (i = start; i < data.length; i++) {
+      result.push(data[i])
+    }
   }
-  return start == 0 && end == 0 ? data : result
+  return !start && !end ? data : result
 }
 
 //DRIVER CODE

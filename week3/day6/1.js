@@ -78,7 +78,7 @@
 		
 
 
-const mineTycoon = (mine, steps) => {
+function mineTycoon (mine, steps) {
 	//implementasi function disini!
 	let nCopper = 0, nSilver = 0, nGold = 0, nDiamond = 0, result = []
 	let j = 0
