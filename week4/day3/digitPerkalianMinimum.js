@@ -6,14 +6,24 @@
 //   // you can only write your code here!
 // }
 const digitPerkalianMinimum = angka => {
-  let result = []
+  let container = [], result = 0
   for (let i = 1; i <= angka; i++) {
-    for (let j = 1; j <= angka; j++) {
+    for (let j = i; j <= angka; j++) {
       i * j == angka ?
-        result.push(i, j) : null
+        container.push([`${i}${j}`]) : null
     }
   }
-  return Math.round(result.length/8) > 1 ? Math.round(result.length/8) : result.length
+  for (let i = 0; i < container.length; i++) {
+    for (let j = 0; j < container[i].length; j++) {
+      result = container[i][j].length
+      if (result[j] > result[j+1]) {
+        let temp = result[i]
+        result[j] = result[j+1]
+        result[j+1] = temp
+      }
+    }
+  }
+  return result
 }
 
 // TEST CASES

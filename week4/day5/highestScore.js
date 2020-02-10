@@ -5,16 +5,19 @@
 const highestScore = students => {
   let result = {}
   for (let i = 0; i < students.length; i++) {
-    // console.log(`loop ke - ${i}`)
-    // console.log(students[i])
     result[students[i].class] = students[i].class
   }
-  // console.log(result)
-  for (let j = 0; j < students.length; j++) {
-    if (students[j].class == result[students[j].class] ) {
-      result[students[j].class] = students[j]
-      delete students[j].class
-      // console.log(students[j])
+  for (let i = 0; i < students.length; i++) {
+    for (let j = 0; j < students.length-1; j++) {           // for sorting the score, put the highest number first
+      if (students[j].score < students[j+1].score) {
+        let temp = students[j]
+        students[j] = students[j+1]
+        students[j+1] = temp
+      }
+    }
+    if (students[i].class == result[students[i].class] ) {
+      result[students[i].class] = students[i]
+      delete students[i].class
     }
     // BELOW THIS IS HARDCODE
     // if (students[j].class == result['wolves'] ) {
@@ -26,7 +29,6 @@ const highestScore = students => {
     //   // console.log(students[j])
     // }
   }
-  // console.log(result)
   return result
 }
 
@@ -95,4 +97,4 @@ console.log(highestScore([
 // // }
 
 
-// console.log(highestScore([])); //{}
+console.log(highestScore([])); //{}

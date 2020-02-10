@@ -11,9 +11,13 @@ const cariModus = arr => {
     for (let j = arr.length-1; j >= 0; j--) {
       if (j != i && arr[i] == arr[j]) {
         modus = arr[i]
-        changeValue++
-        changeValue > arr.length ? modus = -1 : null
       }
+    }
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (modus == arr[i]) {
+      changeValue++
+      changeValue >= arr.length ? modus = -1 : null
     }
   }
   return modus
@@ -25,3 +29,4 @@ console.log(cariModus([5, 10, 10, 6, 5])); // 5
 console.log(cariModus([10, 3, 1, 2, 5])); // -1
 console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
 console.log(cariModus([7, 7, 7, 7, 7])); // -1
+console.log(cariModus([7, 7, 7, 7, 1])); // 7
