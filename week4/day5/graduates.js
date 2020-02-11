@@ -1,12 +1,14 @@
 const graduates= students => {
   let result = {}
-  for (let i = 0; i < students.length; i++) {
-    // console.log(`loop ke - ${i}`)
-    // console.log(students[i])
-    result[students[i].class] = []
-  }
+  // for (let i = 0; i < students.length; i++) {
+  //   // console.log(`loop ke - ${i}`)
+  //   // console.log(students[i])
+  // }
   // console.log(result)
   for (let j = 0; j < students.length; j++) {
+    if (result[students[j].class] == undefined) {
+      result[students[j].class] = []
+    }
     if (students[j].score > 75) {
       result[students[j].class].push(students[j])
       delete students[j].class
