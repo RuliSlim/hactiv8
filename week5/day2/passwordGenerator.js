@@ -12,79 +12,64 @@
 
 // NOTE:
 // Semua manipulasi string (changeVocals, reverseWord, setLowerUpperCase, removeSpaces) diletakkan di passwordGenerator dan return password-nya dari function ini juga
-
 function changeVocals (str) {
   //code di sini
-  let vocal = 'abcdefghijklmnopqrstuvwxyz', result =''
-  for (let i = 0; i < vocal.length; i++) {
-    let temp = ''
-    for (let j = 0; j < str.length; j++) {
-      // str[i] == (vocal[0] ||  || 'i' || 'o' || 'u') ? result += 
-      if (i == 0 || i ==  4 || i == 8 || i == 14 || i == 20) {
-        str[j] == vocal[i] ? 
-          result += vocal[i+1] : 
-          // str[j].toUpperCase() === vocal[i].toUpperCase() ?
-          // result += vocal[i+1].toUpperCase() :
-          // j == str.length -1 ?
-          // result += str[i] :
-          null
-          result += str[i]
-        // console.log(temp)
+  let alpha = 'aeiouAEIOUbfjpvBFJPV';
+  let string = '';
+  for(i=0; i<str.length; i++) {
+    for(j=0; j < alpha.length/2; j++) {
+      if (str[i] === alpha[j]) {
+        string += alpha[j+10];
+        break;
       }
-      // result += temp
-      // console.log(j, vocal[j])
-      // 0 4 8 14 20 
+      if (j === alpha.length/2 -1 ) {
+        string += str[i];
+      }
     }
   }
-  return result
+  return string;
 }
 
 function reverseWord (str) {
   //code di sini
-  let result =''
-  for (let i = str.length-1; i >= 0; i--) {
-    result += str[i]
+  let string = '';
+  for(i=str.length-1; i>=0; i--) {
+    string += str[i];
   }
-  return result
+  return string;
 }
 
 function setLowerUpperCase (str) {
   //code di sini
-  let result =''
-  for (let i = 0; i < str.length; i++) {
-    str[i] === str[i].toLowerCase() ? result += str[i].toUpperCase() : result += str[i].toLowerCase()
+  var alpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let string = '';
+  for(i=0; i<str.length; i++) {
+    for(j=0; j<alpha.length; j++) {
+      if (str[i] === alpha[j]) {
+        j<25? string += alpha[j+26] : string += alpha[j-26]
+      }
+    }
   }
-  return result
+  return string;
 }
 
 function removeSpaces (str) {
   //code di sini
-  let result = ''
-  for (let i = 0; i < str.length; i++) {
-    str[i] == ' ' ? result += '' : null
+  let string = '';
+  for (i=0; i<str.length; i++) {
+    if (str[i] !== ' '){
+      string += str[i];
+    }
   }
-  return result
+  return string;
 }
 
 function passwordGenerator (name) {
   //code di sini
-  let vocal         = changeVocals(name)
-      reversedWord  = reverseWord(vocal),
-      lowerUpper    = setLowerUpperCase(reversedWord),
-      noSpace       = removeSpaces(lowerUpper)
-      // console.log(noSpace)
-  return name.length > 5 ? lowerUpper : 'Minimal karakter yang diinputkan adalah 5 karakter'
+  return name.length >= 5? removeSpaces(setLowerUpperCase(reverseWord(changeVocals(name)))) : 'Minimal karakter yang diinputkan adalah 5 karakter';
 }
 
-console.log(changeVocals('a e i o u, A E I O U'));
-// console.log(reverseWord(changeVocals('a e i o u, A E I O U'))); 
-// console.log(setLowerUpperCase(reverseWord(changeVocals('a e i o u, A E I O U')))); 
-// console.log(reverseWord(changeVocals('Sergei Dragunov'))); 
-// console.log(reverseWord(changeVocals('Alexei'))); 
-
-
-// console.log(passwordGenerator('a k e i o u, A E I O U')); // 'VPNVGBRdJFGRFs'
-// console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
-// console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
-// console.log(passwordGenerator('Alexei')); // 'JFXFLb'
-// console.log(passwordGenerator('Alex')); // 'Minimal karakter yang diinputkan adalah 5 karakter'
+console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
+console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
+console.log(passwordGenerator('Alexei')); // 'JFXFLb'
+console.log(passwordGenerator('Alex')); // 'Minimal karakter yang diinputkan adalah 5 karakter'
