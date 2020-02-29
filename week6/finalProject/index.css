@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Syncopate);
+body {
+  background-image: radial-gradient(circle at 100%, rgb(0, 0, 0), #333 50%, rgb(182, 166, 166) 75%, #333 75%);;
+}
+
+html, body { 
+  height: 100vh; 
+  overflow: hidden; 
+  box-sizing: content-box;
+}
+/* body {
+  background: radial-gradient(
+    circle closest-corner at center 50vh,
+    #222,
+    black 40%
+  ) no-repeat;
+  text-align: center;
+} */
+h1 {
+  display: inline-block;
+  padding-top: 100px;
+  font-family: 'Syncopate', sans-serif;
+  text-transform: uppercase;
+  background: radial-gradient(
+    circle farthest-corner at center center,
+    #ccc,
+    rgb(61, 57, 57)
+  ) no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#main {
+  text-align: center;
+  line-height: 3em;
+}
+
+#form {
+  margin: 0 auto;
+  padding: 2.5vw;
+  width: 30vw;
+  height: 45vh;
+  border: 2px solid white;
+  color: red;
+}
+
+#listedTodo {
+  margin: 0 auto;
+  padding: 2.5vw;
+  width: 30vw;
+  /* height: 45vh; */
+  border: 2px solid white;
+  color: red;
+  text-decoration: none;
+  text-align: left;
+}
+
+li {
+  color: blue;
+  list-style-type: none;
+}
+
+/* ul, li {
+  text-decoration: none;
+} */
+
+#content {
+  padding: 3.5vw;
+}
+
+input {
+  /* width: 30vw; */
+  /* width: 100%; */
+  height: 3vh;
+}
+
+.button {
+  margin-top: 4vh;
+  background-color: rgb(58, 56, 56);
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+
